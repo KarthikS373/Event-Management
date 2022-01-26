@@ -1,0 +1,253 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Mochiy+Pop+P+One&family=Nunito:ital,wght@0,200;1,500;1,700&display=swap');
+/* Unsplash Random Image: https://source.unsplash.com/Random/h*w  */
+
+
+:root{
+    /* Color const */
+    --black: #130f40;
+    --white: #fff;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    --border-all: 0.1rem solid rgba(255, 255, 255, 0.1);
+    --border-top: 0.1rem solid rgba(255, 255, 255, 0.3);
+    --border-left: 0.1rem solid rgba(255, 255, 255, 0.3);
+    --color-bc: rgba(255, 255, 255, 0.1);
+    --color-pick1: #00B6FF;
+    --color-pick2: #3867d6;
+}
+
+
+*{
+    font-family: 'Nunito', 'Mochiy Pop P One', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+
+HTML{    
+    overflow-x: hidden;
+    scroll-padding-top: 2em;
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+::-webkit-scrollbar{
+    width: 1em;
+}
+
+::-webkit-scrollbar-thumb{
+    width: 1em;
+    background: var(--color-pick2);
+    border-radius: 5em;
+}
+
+::-webkit-scrollbar-track{
+    background: #444;
+}
+
+body{
+    background-color: #222;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.8rem 3rem;
+    font-size: 1.7rem;
+    border-radius: 0.5rem;
+    background-color: #666;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 1000;
+}
+
+.btn:hover{
+    background-color: var(--color-bc);
+}
+
+/* .header{
+    background-color: #333;
+    display: flex;
+    margin-top: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 5%;
+} */
+
+
+/* TODO HEADER */
+.header{
+    position: fixed;
+    top: 1.5rem;
+    z-index: 999;
+    left: 50%;
+    width: 95%;
+    transform: translatex(-50%);
+    background: var(--color-bc);
+    border: var(--border-all);
+    border-top: var(--border-top);
+    border-left: var(--border-left);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--box-shadow);
+    padding: 3em;
+}
+
+
+.header .HomeLogo{
+    font-weight: bolder;
+    font-size: 2.5em;
+    color: #fff;
+}
+
+.header .HomeLogo::first-letter{
+    color: var(--color-pick2);
+}
+
+.header .HomeNav a{
+    font-size: 1.5em;
+    color: #fff;
+    margin-right: 2em;
+} 
+
+.header .HomeNav a:hover{
+    color: var(--color-pick2);
+    transition: ease;
+    border-radius: 0.5em;
+}
+
+#HomeMenuBar{
+    font-size: 3rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+/* TODO Home TOP */
+section{
+    padding: 3rem 9%;
+}
+
+.HomeTop .HomeTopContent{
+    text-align: center;
+    padding-top: 6rem;
+    margin: 4.5rem auto;
+    max-width: 70rem;
+}
+
+.HomeTop .HomeTopContent h3{
+    color: #fff;
+    font-size: 4.5rem;
+    text-transform: uppercase;
+}
+
+
+.HomeTop .HomeTopContent h3 span{
+    color: #3867d6;
+}
+
+.HomeTop .HomeTopSlider .swiper-slide{
+    overflow: hidden;
+    border-radius: 1.2rem;
+    height: 50rem;
+    width: 35rem;
+    -webkit-box-reflect: below 2px linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.3));
+}
+
+.HomeTop .HomeTopSlider .swiper-slide img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+
+
+
+
+
+
+
+
+/* Media Query --> for Responsivness */
+
+
+/*! *** 996px *** */
+@media screen and (max-width: 996px) {
+    HTML{    
+        font-size: 55%;
+    }
+
+    .header{
+        padding: 1.5rem 2rem;
+    }
+
+    section{
+        padding: 2rem;
+    }
+}
+
+
+/*! *** 768px *** */
+@media screen and (max-width: 768px) {
+    #HomeMenuBar{
+        display: initial;
+    }
+
+    .header .HomeNav{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        border-top: 0.1rem solid #222;
+        background: #333;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    .header .HomeNav.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100% );
+    }
+
+
+    .header .HomeNav a{
+        display: block;
+        background-color: #222;
+        border-radius: 0.5rem;
+        padding: 1.3rem;
+        margin: 1.3rem;
+        font-size: 1.5rem;
+    }
+
+    .fa-times{
+        transform: rotate(180deg);
+    }
+
+    .HomeTop .HomeTopContent h3{
+        font-size: 4rem;
+
+    }
+
+}
+
+
+/*! *** 450px0 *** */
+@media screen and (max-width: 450px) {
+    html{
+        font-size: 50%;
+    }
+
+    .HomeTop .HomeTopSlider .swiper-slide{
+        width: 25rem;
+    }
+}
+
+
+
+
+
+
+
